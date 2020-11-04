@@ -12,6 +12,7 @@ jobs:
   build:           
     runs-on: ubuntu-18.04
     steps:    
+    - uses: actions/checkout@v2
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action@v1.3
       # if: always()
