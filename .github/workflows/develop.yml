@@ -1,0 +1,22 @@
+name: Develop Branch Actions
+
+on:
+  push:
+    branches:
+    - develop
+    # paths-ignore:
+    # - '.github/**'
+    
+jobs:
+  build:           
+    runs-on: ubuntu-18.04
+    steps:    
+    - name: Publish Unit Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v1.3
+      # if: always()
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        check_name: Unit Test Results          
+        files: test_results/checkov_results.xml
+        report_individual_runs: true        
+        deduplicate_classes_by_file_name: false

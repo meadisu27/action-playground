@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<testsuites disabled="0" errors="0" failures="2" tests="2" time="0.0">    
+    <testsuite disabled="0" errors="0" failures="1" name="Ensure S3 bucket has MFA delete enabled" package="checkov.terraform.checks.resource.aws.S3MFADelete" skipped="0" tests="1" time="0">
+        <testcase classname="checkov.terraform.checks.resource.aws.S3MFADelete" file="/state/main.tf" name="terraform Ensure S3 bucket has MFA delete enabled aws_s3_bucket.state">
+            <failure message="Resource &quot;aws_s3_bucket.state&quot; failed in check &quot;Ensure S3 bucket has MFA delete enabled&quot;" type="failure"/>
+        </testcase>
+    </testsuite>
+    <testsuite disabled="0" errors="0" failures="1" name="Ensure the S3 bucket has access logging enabled" package="checkov.terraform.checks.resource.aws.S3AccessLogs" skipped="0" tests="1" time="0">
+        <testcase classname="checkov.terraform.checks.resource.aws.S3AccessLogs" file="/state/main.tf" name="terraform Ensure the S3 bucket has access logging enabled aws_s3_bucket.state">
+            <failure message="Resource &quot;aws_s3_bucket.state&quot; failed in check &quot;Ensure the S3 bucket has access logging enabled&quot;" type="failure"/>
+        </testcase>
+    </testsuite>
+</testsuites>
