@@ -13,12 +13,21 @@ jobs:
     runs-on: ubuntu-18.04
     steps:    
     - uses: actions/checkout@v2
-    - name: Publish Unit Test Results
+    - name: Publish Unit Test Results Success
       uses: EnricoMi/publish-unit-test-result-action@v1.3
-      # if: always()
+      if: always()
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         check_name: Unit Test Results          
-        files: test_results/checkov_results.xml
+        files: test_results/publish_success.xml
+        report_individual_runs: true        
+        deduplicate_classes_by_file_name: false
+    - name: Publish Unit Test Results Fails
+      uses: EnricoMi/publish-unit-test-result-action@v1.3
+      if: always()
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        check_name: Unit Test Results          
+        files: test_results/publish_fails.xml
         report_individual_runs: true        
         deduplicate_classes_by_file_name: false
