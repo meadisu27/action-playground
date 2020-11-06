@@ -14,11 +14,11 @@ jobs:
     steps:    
     - uses: actions/checkout@v2
     - name: Publish Unit Test Results Success
-      uses: EnricoMi/publish-unit-test-result-action@v1.3
+      uses: EnricoMi/publish-unit-test-result-action@branch-nil-raw-details
       if: always()
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        check_name: Unit Test Results          
+        check_name: Not Nil Raw Details Test Results          
         files: test_results/publish_success.xml
         report_individual_runs: true        
         deduplicate_classes_by_file_name: false
@@ -27,7 +27,7 @@ jobs:
       if: always()
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        check_name: Unit Test Results          
+        check_name: Nil Raw Details Test Results          
         files: test_results/publish_fails.xml
         report_individual_runs: true        
         deduplicate_classes_by_file_name: false
